@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import TaskList from './TaskList'; // Ensure TaskList.tsx has `export default TaskList`
 import TaskForm from './TaskForm'; // Ensure TaskForm.tsx has `export default TaskForm`
+import Appbar from "./_components/Appbar";
+
 
 interface Task {
   id: number;
@@ -21,6 +23,7 @@ const Home: React.FC = () => {
 
   return (
     <div className="font-sans items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+      <Appbar />
       <TaskForm onTaskCreated={handleTaskCreated} />
       <TaskList refreshTrigger={refreshTrigger} />
     </div>

@@ -14,7 +14,7 @@ const TaskList: React.FC<TaskListProps> = ({ refreshTrigger }) => {
   const [tasks, setTasks] = useState<Task[]>([]);
 
   const fetchTasks = () => {
-    fetch('http://localhost:3000/tasks')
+    fetch('http://localhost:3001/tasks')
       .then(response => response.json())
       .then((data: Task[]) => setTasks(data))
       .catch(error => console.error('Error fetching tasks:', error));
@@ -25,7 +25,7 @@ const TaskList: React.FC<TaskListProps> = ({ refreshTrigger }) => {
   }, [refreshTrigger]);
 
   const deleteTask = (id: number) => {
-    fetch(`http://localhost:3000/tasks/${id}`, {
+    fetch(`http://localhost:3001/tasks/${id}`, {
       method: 'DELETE'
     })
       .then(() => setTasks(tasks.filter(task => task.id !== id)))
