@@ -37,6 +37,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ onTaskCreated }) => {
       <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">Create Task</h2>
       <div className="space-y-4">
         <input
+          name="title"
           type="text"
           placeholder="Task Title"
           value={title}
@@ -45,6 +46,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ onTaskCreated }) => {
           required
         />
         <textarea
+          name="description"
           placeholder="Task Description"
           value={description}
           onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setDescription(e.target.value)}
