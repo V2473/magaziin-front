@@ -16,7 +16,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ onTaskCreated }) => {
 
   const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    fetch('http://localhost:3001/tasks', {
+    fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/tasks`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
